@@ -282,6 +282,7 @@ async def stream_code(websocket: WebSocket):
                     raise Exception("No OpenAI or Anthropic key")
 
                 tasks: List[Coroutine[Any, Any, str]] = []
+                print(variant_models)
                 for index, model in enumerate(variant_models):
                     if model == "openai":
                         if openai_api_key is None:
